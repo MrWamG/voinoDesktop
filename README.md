@@ -1,9 +1,9 @@
 # voinoPlayer
-+ start
+### start
 ``` 
 npm install
 ```
-+ run
+### run
 ```
 electron .
 ```
