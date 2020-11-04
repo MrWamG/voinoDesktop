@@ -1,0 +1,329 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+.voi_container {
+  position: fixed;
+  left: calc(100% - 150px);
+  top: calc(100% - 200px);
+  /* transform:scale(0.7); */
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+.voi_child {
+  width: 60px;
+  height: 60px;
+  background: #ec5555;
+  position: absolute;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.voi_child:hover {
+  background: #fff;
+}
+.voi_child:active {
+  filter: brightness(85%);
+}
+.voi_child:hover .voi_arrow_left_line {
+  background: #ec5555;
+}
+.voi_child_is_on {
+  width: 60px;
+  height: 60px;
+  background: #ec5555;
+  position: absolute;
+  transform: rotate(45deg);
+  cursor: auto;
+  transition: all 0.3s ease;
+}
+.voi_child_unable:hover {
+  background: #ec5555;
+}
+.voi_child_unable:active {
+  filter: brightness(100%);
+}
+.voi_child_content {
+  position: relative;
+  transform: rotate(-45deg);
+}
+.voi_child_box > .voi_child:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+.voi_child_box > .voi_child:nth-child(2) {
+  top: 50px;
+  left: 50px;
+}
+.voi_child_box > .voi_child:nth-child(3) {
+  top: 100px;
+  left: 0px;
+}
+.voi_child_box > .voi_child:nth-child(4) {
+  top: 50px;
+  left: -50px;
+}
+.voi_main_box {
+  top: 40px;
+  width: 80px;
+  left: -10px;
+  height: 80px;
+  background: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.voi_main_box:hover {
+  background: #ec5555;
+}
+.voi_main_box:active {
+  filter: brightness(85%);
+}
+.voi_main_content {
+  transform: rotate(-45deg);
+}
+.voi_main_svg_box {
+  display: flex;
+  /* padding-left: 10px; */
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+}
+.voi_svg {
+  fill: #ec5555;
+}
+.play_svg {
+  transition: all 0.3s ease;
+  d: path("M862.7 528L338.4 908.3c-7.9 4.4-14.7 5-20.4 1.5-5.6-3.5-8.5-9.6-8.5-18.5V132.8c0-8.9 2.8-15.1 8.5-18.5 5.6-3.5 12.5-2.9 20.4 1.5L862.7 496c7.9 4.4 11.8 9.8 11.8 15.9 0 6.3-4 11.7-11.8 16.1z");
+  /* transform: translate(100px,0px); */
+}
+.voi_song_list_svg {
+  position: absolute;
+  top: -11px;
+  left: -3px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  pointer-events: default;
+}
+.voi_song_list_path {
+  d: path("M341.333 170.667h568.89v113.777h-568.89z m-227.555 0h113.778v113.777H113.778z m0 284.444h113.778V568.89H113.778z m0 284.445h113.778v113.777H113.778z m227.555 0h568.89v113.777h-568.89z m0-284.445h568.89V568.89h-568.89z");
+  fill: #fff;
+  transition: all 0.3s ease;
+}
+#voiUpBtn:hover .voi_song_list_path {
+  fill: #ec5555;
+}
+.voi_main_box:hover .voi_svg,
+.loadSvg circle {
+  fill: #fff;
+  stroke: #fff;
+}
+.voi_arrow_left {
+  position: relative;
+  left: 10px;
+  top: -10px;
+}
+.voi_arrow_right {
+  position: relative;
+  left: 50px;
+  top: -50px;
+}
+.voi_arrow_left_line {
+  background: #fff;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.voi_arrow_left .voi_arrow_left_line:nth-child(1) {
+  width: 5px;
+  height: 20px;
+  top: 40px;
+  left: 0px;
+}
+.voi_arrow_left .voi_arrow_left_line:nth-child(2) {
+  width: 20px;
+  height: 5px;
+  top: 55px;
+  left: 0px;
+}
+.voi_arrow_right .voi_arrow_left_line:nth-child(1) {
+  width: 5px;
+  height: 20px;
+  top: 60px;
+  left: -5px;
+}
+.voi_arrow_right .voi_arrow_left_line:nth-child(2) {
+  width: 20px;
+  height: 5px;
+  top: 60px;
+  left: -20px;
+}
+.voi_random_ico > svg {
+  width: 25px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  transform: rotate(-45deg);
+}
+.voi_child:hover > .voi_random_ico > svg > path {
+  fill: #ec5555;
+}
+/* 开始歌曲详情处理 */
+.voi_song_list_box {
+  position: absolute;
+  left: -21.3px;
+  top: -9px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.voi_song_list_relative {
+  position: relative;
+}
+.voi_song_cover_box {
+  position: relative;
+  z-index: 1;
+}
+.voi_song_cover_main {
+  transform: rotate(45deg);
+  border: 3px solid #fff;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.voi_song_cover_main > img {
+  width: calc(100% + 25px);
+  height: calc(100% + 25px);
+  position: absolute;
+  transform: rotate(-45deg) translate(-50%, -50%);
+  left: 80%;
+  top: -20%;
+}
+.voi_song_list_operate_box {
+  width: 0px;
+  height: 100%;
+  top: 0px;
+  left: 30px;
+  position: absolute;
+  color: #fff;
+  background: #ec5555;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+.voi_song_list_content_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 45px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.voi_song_list_arg_deco {
+  position: absolute;
+  right: -21px;
+  top: 9px;
+  height: 42px;
+  width: 42px;
+  background: #ec5555;
+  transform: rotate(45deg);
+}
+.voi_song_list_song_info,
+.voi_song_list_btn_box {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.voi_song_list_song_info {
+  width: 100px;
+}
+.voi_song_list_btn_box {
+  z-index: 1;
+  flex-direction: row;
+  align-items: center;
+}
+.voi_song_list_operate_author {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.voi_song_list_operate_song_name {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.voi_off_btn {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
+}
+.voi_volume {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.voi_song_list_btn_box > div {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.voi_song_list_btn_box > div:hover {
+  filter: brightness(90%);
+}
+.voi_song_list_btn_box > div:active {
+  filter: brightness(80%);
+}
+.voi_off_btn_line {
+  width: 1px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 9px;
+}
+.loadSvg {
+  /* width: 1000px; */
+  /* height: 1000px; */
+}
+.loadSvg circle {
+  cx: 512px;
+  cy: 512px;
+  r: 390px;
+  stroke: #ec5555;
+  fill: none!important;
+  stroke-width: 150px;
+  stroke-dashoffset: -238%;
+  stroke-dasharray: 238%;
+  /* display:none; */
+  animation: loadSvg 1.5s ease infinite;
+}
+@keyframes loadSvg {
+  0% {
+    stroke-dashoffset: -238%;
+    stroke-dasharray: 238%;
+  }
+  50% {
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 238%;
+  }
+  100% {
+    stroke-dashoffset: 238%;
+    stroke-dasharray: 238%;
+  }
+}
+/* 结束歌曲详情处理 */

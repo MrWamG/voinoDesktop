@@ -1,0 +1,17 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./main.js",
+    "package":"electron-packager . ___electron --platform=win32 --arch=x64 --out=./electronPack --asar --app-version=0.0.1 --overwrite --ignore=node_modules"
+  },
+  "keywords": [],
+  "author": "Silenzio",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.10"
+  }
+}
