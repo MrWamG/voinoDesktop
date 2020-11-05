@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ./main.js",
-    "package":"electron-packager . ___electron --platform=win32 --arch=x64 --out=./electronPack --asar --app-version=0.0.1 --overwrite --ignore=node_modules"
+	"package": "electron-packager . electron-quick-start --overwrite --win=x32 --out ./voinoMusicPlayer --arch=x64 --app-version=1.0.0 --electron-version=2.0.0"
   },
   "keywords": [],
   "author": "Silenzio",

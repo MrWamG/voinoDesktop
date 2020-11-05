@@ -9,7 +9,7 @@ body {
 .voi_container {
   position: fixed;
   left: calc(100% - 150px);
-  top: calc(100% - 200px);
+  top: calc(100% - 233px);
   /* transform:scale(0.7); */
   transition: all 0.3s ease;
   z-index: 3;

@@ -2,12 +2,14 @@ const { app, BrowserWindow, win} = require('electron')
 const ipc = require('electron').ipcMain;
 function createWindow () {
     const win = new BrowserWindow({
-        width: 1920,
-        height: 1080,
+        // width: 1920,
+        // height: 1080,
+		fullscreen: true,
         frame:false,
 		transparent:true,
 		resizable: false, //禁止改变主窗口尺寸
 		enableRemoteModule: true,
+		alwaysOnTop: false,  //窗口是否总是显示在其他窗口之前
         webPreferences: {
             nodeIntegration: true,
 			enableRemoteModule: true/* Update 2020, since this answer still appears at the top. For the above to work in current versions of Electron, you need to set enableRemoteModule when creating the window in your main process. */
