@@ -208,6 +208,13 @@ body {
   transform: rotate(-45deg) translate(-50%, -50%);
   left: 80%;
   top: -20%;
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .voi_song_list_operate_box {
   width: 0px;
@@ -257,12 +264,12 @@ body {
   align-items: center;
 }
 .voi_song_list_operate_author {
-  font-size: 12px;
+  font-size: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .voi_song_list_operate_song_name {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;

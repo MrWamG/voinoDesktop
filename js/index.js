@@ -137,7 +137,7 @@ var app = new Vue({
         voi_song_list.style.cssText = "top:0px;cursor:pointer;";
         voi_song_list_box.style.cssText = "opacity:0;pointer-events:auto;";
         voi_song_list_operate_box.style.width = "0px";
-        voi_container.style.left = voi_container.offsetLeft + 140 + "px";
+        voi_container.style.left = voi_container.offsetLeft + 170 + "px";
         window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
         _songListIsOn = false;
       }
