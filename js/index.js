@@ -6,27 +6,44 @@ const {
 	BrowserWindow
 } = remote;
 let win = require('electron').remote.getCurrentWindow()
-win.setIgnoreMouseEvents(true, {
-	forward: true
-})
+win.setIgnoreMouseEvents(true, {forward: true})
 var app = new Vue({
 	el: '#voinoBtn',
 	data() {
 		return {
-			musicPlayer: {
+			musicPlayer: {/* 音乐播放器操作 */
 				songName: "暂无",
 				// songSrc:'http://www.sbeam.xyz/voinoVue/static/audios/april02.mp3',
 				songSrc: "暂无",
 				songAuthor: "暂无",
-				vAudioIsReady: false
-			}
+				vAudioIsReady: false,
+			},
+			boardShow:false,/* 播放器面板是否显示 */
 		};
+	},
+	methods:{
+		showBoard(){/* 显示播放器面板 */
+			this.$set(this,'boardShow',true)
+		},
+		cancelBoard(){
+			this.$refs.board_fixed_board.style.transform = "translate(-50%,-50%) rotateY(90deg)"
+			this.$refs.board_fixed_board.addEventListener('transitionend',()=>{
+				this.$set(this,'boardShow',false)
+			})
+		},
+		prohibThrough(){
+			win.setIgnoreMouseEvents(false)
+		},
+		allowThrough(){
+			win.setIgnoreMouseEvents(true, {
+				forward: true
+			})
+		}
 	},
 	mounted() {
 		const _this = this;
 		let voi_is_on = true;
 		let isLoaded = false;
-		// const _html = (this.html = document.getElementsByTagName("html")[0]);
 		this.$refs.voi_main_box.onmouseup = (e) => {
 			if(e.button == 0){
 				if (voi_is_on) {
@@ -51,7 +68,9 @@ var app = new Vue({
 			play_svg,
 			voi_main_svg_box,
 			play_svg_box,
-			play_load_svg
+			play_load_svg,
+			board_fixed_board,
+			cancelBtn
 		] = [
 			this.$refs.voi_song_list,
 			this.$refs.voi_song_list_box,
@@ -61,9 +80,12 @@ var app = new Vue({
 			this.$refs.play_svg,
 			this.$refs.voi_main_svg_box,
 			this.$refs.play_svg_box,
-			this.$refs.play_load_svg
+			this.$refs.play_load_svg,
+			this.$refs.board_fixed_board,
+			this.$refs.cancelBtn
 		];
-		// let dragStage = document.getElementsByClassName('dragStage')[0];
+		
+		/* 允许点击穿透 */
 		voi_container.addEventListener('mouseenter', function() {
 			win.setIgnoreMouseEvents(false)
 		})
@@ -72,7 +94,15 @@ var app = new Vue({
 				forward: true
 			})
 		})
+		
+		/* 显示播放器面板 */
+		voi_container.addEventListener('mousedown',(e)=>{
+			if(e.button == 1){
+				this.showBoard()
+			}
+		})
 
+		let dragStage = document.getElementsByClassName('dragStage')[0];
 		let [x, y, l, t, isDown] = [0, 0, 0, 0, false];
 		//鼠标按下事件
 		voi_container.onmousedown = function(e) {

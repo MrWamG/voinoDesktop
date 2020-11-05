@@ -9,6 +9,21 @@
 </head>
 <body>
     <div id="voinoBtn">
+		<section class="board_fixed_board" ref="board_fixed_board" v-if="boardShow" @mouseenter="prohibThrough" @mouseleave="allowThrough">
+			<div class="board">
+				<div class="box login"></div>
+				<div class="box two"></div>
+				<div class="box three"></div>
+				<div class="box four"></div>
+				<div class="cancelBtn" ref="cancelBtn" @mousedown="cancelBoard">
+					<div class="content">
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+				</div>
+			</div>
+		</section><!-- boardFixedBox -->
+		
         <section class="voi_container" ref="voi_container">
           <section class="voi_child_box">
             <div class="voi_child" id="voiUpBtn" ref="voi_song_list">
