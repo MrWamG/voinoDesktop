@@ -423,7 +423,7 @@ body {
   transform: rotate(45deg) translate(0%, 0%) scale(0);
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
-  transition: all 0.1s ease;
+  transition: transform 0.1s ease, filter 0.6s ease;
   cursor: pointer;
 }
 .board_fixed_board .board .box:hover {
@@ -487,8 +487,8 @@ body {
   top: -10%;
   left: 25%;
 }
-.board_fixed_board .board .theme {
-  animation: theme 0.5s ease;
+.board_fixed_board .board .find {
+  animation: find 0.5s ease;
   animation-delay: 0.1s;
   top: 25%;
   left: -10%;
@@ -499,16 +499,16 @@ body {
   left: 25%;
   top: 60%;
 }
-.board_fixed_board .board .setting {
-  animation: setting 0.5s ease;
+.board_fixed_board .board .songList {
+  animation: songList 0.5s ease;
   animation-delay: 0.2s;
   top: 25%;
   left: 60%;
 }
 .board_fixed_board .board .login,
-.board_fixed_board .board .theme,
+.board_fixed_board .board .find,
 .board_fixed_board .board .more,
-.board_fixed_board .board .setting {
+.board_fixed_board .board .songList {
   animation-fill-mode: forwards;
 }
 @keyframes login {
@@ -519,7 +519,7 @@ body {
     transform: rotate(45deg) translate(0%, 0%) scale(1);
   }
 }
-@keyframes theme {
+@keyframes find {
   0% {
     transform: rotate(45deg) translate(0%, 0%) scale(0);
   }
@@ -535,7 +535,7 @@ body {
     transform: rotate(45deg) translate(0%, 0%) scale(1);
   }
 }
-@keyframes setting {
+@keyframes songList {
   0% {
     transform: rotate(45deg) translate(0%, 0%) scale(0);
   }
