@@ -432,33 +432,83 @@ body {
 .board_fixed_board .board .box:active {
   filter: brightness(90%);
 }
+.board_fixed_board .board .box:hover .content .icon path {
+  fill: #EC5555;
+}
+.board_fixed_board .board .box:hover .content .text {
+  color: #EC5555;
+}
+.board_fixed_board .board .box:hover .content .dotBox .dot {
+  background-color: #EC5555;
+}
+.board_fixed_board .board .box .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-45deg);
+  text-align: center;
+}
+.board_fixed_board .board .box .content .icon path {
+  fill: #FFFFFF;
+  transition: all 0.2s ease;
+}
+.board_fixed_board .board .box .content .text {
+  font-size: 26px;
+  color: #FFFFFF;
+  display: flex;
+  transition: all 0.2s ease;
+}
+.board_fixed_board .board .box .content .text div {
+  margin-left: 8px;
+}
+.board_fixed_board .board .box .content .text div:first-child {
+  margin-left: 0px;
+}
+.board_fixed_board .board .box .content .dotBox {
+  display: flex;
+  margin-bottom: 15px;
+}
+.board_fixed_board .board .box .content .dotBox .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  margin-left: 15px;
+  transition: all 0.2s ease;
+}
+.board_fixed_board .board .box .content .dotBox .dot:first-child {
+  margin-left: 0px;
+}
 .board_fixed_board .board .login {
   animation: login 0.5s ease;
   top: -10%;
   left: 25%;
 }
-.board_fixed_board .board .two {
-  animation: two 0.5s ease;
+.board_fixed_board .board .theme {
+  animation: theme 0.5s ease;
   animation-delay: 0.1s;
   top: 25%;
   left: -10%;
 }
-.board_fixed_board .board .three {
-  animation: three 0.5s ease;
+.board_fixed_board .board .more {
+  animation: more 0.5s ease;
   animation-delay: 0.3s;
   left: 25%;
   top: 60%;
 }
-.board_fixed_board .board .four {
-  animation: four 0.5s ease;
+.board_fixed_board .board .setting {
+  animation: setting 0.5s ease;
   animation-delay: 0.2s;
   top: 25%;
   left: 60%;
 }
 .board_fixed_board .board .login,
-.board_fixed_board .board .two,
-.board_fixed_board .board .three,
-.board_fixed_board .board .four {
+.board_fixed_board .board .theme,
+.board_fixed_board .board .more,
+.board_fixed_board .board .setting {
   animation-fill-mode: forwards;
 }
 @keyframes login {
@@ -469,7 +519,7 @@ body {
     transform: rotate(45deg) translate(0%, 0%) scale(1);
   }
 }
-@keyframes two {
+@keyframes theme {
   0% {
     transform: rotate(45deg) translate(0%, 0%) scale(0);
   }
@@ -477,7 +527,7 @@ body {
     transform: rotate(45deg) translate(0%, 0%) scale(1);
   }
 }
-@keyframes three {
+@keyframes more {
   0% {
     transform: rotate(45deg) translate(0%, 0%) scale(0);
   }
@@ -485,7 +535,7 @@ body {
     transform: rotate(45deg) translate(0%, 0%) scale(1);
   }
 }
-@keyframes four {
+@keyframes setting {
   0% {
     transform: rotate(45deg) translate(0%, 0%) scale(0);
   }

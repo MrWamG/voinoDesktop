@@ -94,7 +94,6 @@ var app = new Vue({
 				forward: true
 			})
 		})
-		
 		/* 显示播放器面板 */
 		voi_container.addEventListener('mousedown',(e)=>{
 			if(e.button == 1){
